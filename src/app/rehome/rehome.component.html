@@ -1,0 +1,123 @@
+<app-header></app-header>
+<div style="height:40px"></div>
+
+<!-- Re-home Application Design -->
+<div class="container-fluid register bg-success">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <!-- <img [src]="petphoto" alt="Pet Image"/>  -->
+           
+        </div>
+        <div class="col-md-9 register-right">
+          
+                <div class="text-center mt-3">
+                    <img style="border-radius: 50%;" width="45px" src="https://dm6g3jbka53hp.cloudfront.net/static-images/app-upadate-banner_TPN-app-logo.png" alt="pet shelter icon">
+
+                    <h2 class="text-success" style="margin: 0; padding: 0;">Rehoming Your Pet</h2>
+                      <h4 class="text-secondary">Find Your Pet a Loving Forever Home</h4>
+                      <hr>
+                </div>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <!-- <h3 class="register-heading">Apply as a Employee</h3> -->
+                    <form (ngSubmit)="rehome()" [formGroup]="rehomeForm">
+
+                    <div class="row register-form">
+
+                        <div class="col-md-6">
+                            <h5 class="text-success"><i class="fa-solid fa-user me-2"></i>Your Details</h5>
+                            <hr>
+                            <div class="">
+                                <input name="uname" formControlName="uname" type="text" class="form-control" placeholder="Your Name *" />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('uname')?.errors&&this.rehomeForm.get('uname')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Username
+                                </div>
+
+                            <div class=" mt-2">
+                                <input name="email" formControlName="email" type="text" class="form-control" placeholder="Your E-mail *"  />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('email')?.errors&&this.rehomeForm.get('email')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid E-mail
+                                </div>
+
+                            <div class=" mt-2">
+                                <input name="phno" formControlName="phno" type="text" class="form-control" placeholder="Phone Number *"  />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('phno')?.errors&&this.rehomeForm.get('phno')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Phone Number
+                                </div>
+
+                            <!-- <div class="form-group mt-2">
+                                <input type="password " class="form-control" placeholder="Password *" value="" />
+                            </div> -->
+                        
+                            <div class=" mt-2">
+                                <input name="address" formControlName="address" type="text" class="form-control"  placeholder="Address *"  />
+                            </div>   
+
+                            <div *ngIf="this.rehomeForm.get('address')?.errors&&this.rehomeForm.get('address')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Address
+                                </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-primary"><i class="fa-solid fa-paw me-2"></i>Pet Details</h5>
+                            <hr>
+                            <div class=" ">
+                                <input name="breed" formControlName="breed" type="text" class="form-control" placeholder="Pet's Breed *"  />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('breed')?.errors&&this.rehomeForm.get('breed')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Breed Name
+                                </div>
+
+                            <div class=" mt-2">
+                                <input name="age" formControlName="age" type="text" class="form-control" placeholder="Pet's Age *"  />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('age')?.errors&&this.rehomeForm.get('age')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Age
+                                </div>
+
+                            <div class="mt-2">
+                                <input name="gender" formControlName="gender" type="text" class="form-control"  placeholder="Pet's Gender *" />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('gender')?.errors&&this.rehomeForm.get('gender')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Gender Entry
+                                </div>
+
+                            <div class=" mt-2">
+                                <input name="photo" formControlName="photo" type="text" class="form-control" placeholder="Pet's Photo *"  />
+                            </div>
+
+                            <div *ngIf="this.rehomeForm.get('photo')?.errors&&this.rehomeForm.get('photo')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Photo Url
+                                </div>
+
+                            <!-- <input type="submit" class="btnRegister"  value="Request Meet"/> -->
+                       <button type="submit" class="btn btn-outline-primary mt-2">Submit Details</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                </div>
+                  </div>
+        </div>
+    </div>
+
+</div>

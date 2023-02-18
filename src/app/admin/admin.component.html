@@ -1,0 +1,93 @@
+
+
+<!-- Navigation-->
+<div class="fixed-top">
+    <div class="text-center bg-success text-warning">Adopt a Pet- Find out Your Companion on Pet Shelter <hr style="padding: 0; margin: 0;"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid px-4 px-lg-5 ">
+           <!-- <span> <i class='fas fa-2x fa-paw text-warning' ></i> -->
+            <span><img style="border-radius: 50%;" width="45px" src="https://dm6g3jbka53hp.cloudfront.net/static-images/app-upadate-banner_TPN-app-logo.png" alt="pet shelter icon">
+            <a class="navbar-brand text-light" routerLink="" style="font-family: 'Righteous', cursive;">&nbsp;
+                PET SHELTER</a></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 ">
+                    <li class="nav-item">
+                        <!-- <form class="d-flex ">
+    
+                            <input type="text" class="form-control" placeholder="Search for Pets">
+                        </form> -->
+                        <div class="input-group">
+                            <!-- <input  type="text" class="form-control" placeholder="Find a Pet">
+                            <div class="input-group-append">
+                              <button class="btn btn-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                              </button>
+                            </div> -->
+                          </div>
+                    </li>
+                    <!-- <li  class="nav-item"><a  class="nav-link text-light" ><i class="fa-solid fa-heart text-danger"></i>&nbsp;&nbsp;Favourite Pets</a></li> -->
+                  
+                </ul>
+                <form  class="d-flex loginbtn">
+                    
+                    <span class="text-light align-items-center" style="text-decoration: none;" >
+
+                    </span>
+                </form>
+                <div >
+    
+                    <!-- <form  class="loginbtn">
+                    <a  class="btn btn-outline-light text-light ms-2" type="submit" >
+                        <i class="fa-solid fa-user"></i>&nbsp;
+                        Sign In
+                    </a>
+                </form> -->
+            </div>
+
+        </div>
+
+        </div>
+    </nav>
+    </div>
+
+    
+      
+
+
+<div style="height:80px"></div>
+
+<!-- login page -->
+<div class="wrapper">
+    <div class="logo">
+       <img src="https://dm6g3jbka53hp.cloudfront.net/static-images/app-upadate-banner_TPN-app-logo.png" alt="">
+   </div> 
+   <div class="text-center mt-4 name text-success">
+      <h3>Pet Shelter-Admin</h3>
+      <hr>
+   </div>
+   <form (ngSubmit)="signin()" [formGroup]="adminForm" class="p-3 mt-3">
+       
+ 
+       <div class="form-field d-flex align-items-center ">
+         <span><img style="border-radius: 50%;" width="30px" src="https://png.pngtree.com/png-vector/20190511/ourmid/pngtree-vector-key-icon-png-image_1028662.jpg" alt="key image"></span>
+         <input name="pswd" formControlName="pswd" type="password" class="form-control"  placeholder="Secret Key">
+       </div>
+ 
+          <!-- invalid pswd -->
+          <div *ngIf="this.adminForm.get('pswd')?.errors&&this.adminForm.get('pswd')?.touched" 
+          class="text-danger mb-2">
+             Invalid Key
+          </div>                       
+                                         
+ 
+       <button type="submit"  class="btn mt-3 btn-success">Log in
+ 
+        
+ 
+       </button>
+   </form>
+   <div class="text-center fs-6">
+       <!-- <span>Not a Member? Click Here to  <a routerLink="/register">Sign Up</a></span> -->
+   </div>
+ </div>

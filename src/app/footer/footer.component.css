@@ -1,0 +1,8 @@
+a{
+    opacity: .5;
+}
+
+a :hover{
+    cursor: pointer;
+    opacity: .3;
+}

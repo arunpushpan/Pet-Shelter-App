@@ -1,0 +1,136 @@
+<!-- header -->
+<app-header></app-header>
+
+
+
+<!-- carousel design-->
+<div style="height:70px"></div>
+<div id="carouselExampleDark" class="carousel carousel-dark slide " class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner ">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img class="img-fluid" src="https://images.hindustantimes.com/img/2022/02/10/1600x900/dog_thumb_1644498337052_1644498346070.jpg" class="d-block w-100" alt="Pet Image_1">
+        <div class="carousel-caption d-none d-md-block text-dark">
+          <h4>A pet lover's paradise</h4>
+          <p>When a man’s best friend is his dog, that dog has a problem.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img class="img-fluid" src="https://picfiles.alphacoders.com/412/412298.jpg" class="d-block w-100" alt="Pet Image_2">
+        <div class="carousel-caption d-none d-md-block text-dark">
+          <h4>Let's care for your pet family</h4>
+          <p>The clever cat eats cheese and breathes down rat holes with baited breath.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="img-fluid" src="https://media.npr.org/assets/img/2017/09/14/gettyimages-10141026_slide-67be9fc1bca330b26debade87690b5e84286614d.jpg" class="d-block w-100" alt="Pet Image_3">
+        <div class="carousel-caption d-none d-md-block text-dark">
+          <h4>Your pet, our passion</h4>
+          <p>Until one has loved an animal a part of one's soul remains unawakened.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- slogan search -->
+  <div class="container bg-success rounded mt-5"> 
+     <div class="row">
+    <div class="col-sm">  <img  class="float-start img-fluid animate__animated animate__backInLeft" width="100px" src="https://media4.giphy.com/media/326iF1qWfsTgKA4c78/giphy.gif?cid=6c09b9528d5f3846b9f618a43215fb6a56a2784180977640&rid=giphy.gif&ct=s" alt="dog_gif">
+    </div>
+    <div class="col-sm text-center mt-2">
+      <span class="text-light  head " style="font-size: 20px;">Adopt a Forever Friend Today!   </span>
+
+      <div class="input-group" >
+        <div class="btn btn-secondary" style="width: 20%;">
+          <i class="fa fa-paw fa-beat text-dark"></i>
+        </div>
+        <div class="input-group-append" style="width: 80%;">
+          <input (keyup)="search($event)" type="text" class="form-control" placeholder="Search by Category" >
+    
+        </div>
+      </div>
+    </div>
+    <div class="col-sm ">
+      <img class="float-end img-fluid animate__animated animate__backInRight slogan_image" width="100px" src="http://epochcreativesolutions.com/uploads/3/4/8/3/34831796/editor/_1071273.gif?1530405186" alt="pet_image right">
+    </div>
+  </div>
+</div>
+
+
+
+<!-- card design -->
+<div *ngIf="filterName" class="py-5 mt-3">
+  <div class="container px-2 px-lg-2 ">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        
+        <span *ngFor="let pet of pets | filter : searchItem : 'title' " >
+            <div class="col mb-5 zoom">
+            <a routerLink="view-pet/{{pet.id}}" style="text-decoration: none;">
+
+              <div class=" rect p-1 d-flex border rounded " style="background-color: white;">
+                  <div class="float-left ">
+                  <img width="200px" class="img-fluid " [src]="pet.image" [alt]="pet.title" />
+                </div>
+                  <div class="float-right text-dark mt-3">
+                          <h5 class="fw-bolder ">{{pet.title.slice(0,12)}}...</h5>
+                          <hr>
+                            <p class="mt-2">{{pet.gender}}</p> 
+                            <hr>                        
+                       <h5 class="text-secondary">   {{pet.size}}</h5>
+                  </div>
+                  
+              </div>
+              </a>
+          </div>
+
+        </span>
+      </div>
+    </div>
+  </div> 
+
+<section *ngIf="!filterName" class="py-5 mt-3">
+  <div class="container px-2 px-lg-2" >
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        
+        <div class="col mb-5 zoom" *ngFor="let pet of pets | filter : searchKey : 'category'">
+          <a routerLink="view-pet/{{pet.id}}" style="text-decoration: none;">
+
+            <div class=" rect p-1 d-flex border rounded" style="background-color: white;">
+                <!-- Pet image-->
+                <div class="float-left">
+                <img  width="200px" class="img-fluid " [src]="pet.image" [alt]="pet.title" />
+              </div>
+                <!-- Pet details-->
+                <div class="float-right text-dark mt-3">
+                        <!-- Pet name-->
+                        <h5 class="fw-bolder ">{{pet.title}}</h5>
+                        <hr>
+                        <!-- pet-gender -->
+
+                          <p>{{pet.gender}}</p> 
+                          <hr>                        
+                          <!-- Pet price-->
+                     <h5 class="text-secondary">   {{pet.size}}</h5>
+                </div>
+                
+            </div>
+            </a>
+        </div>
+          </div>
+      </div>
+</section>
+
+<!-- end section -->
+

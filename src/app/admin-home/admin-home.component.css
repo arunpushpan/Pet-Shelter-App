@@ -1,0 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+
+
+.loginbtn button:hover{
+background-color: rgb(47, 65, 47);
+}
+.loginbtn a:hover{
+    background-color: rgb(47, 65, 47);
+    /* color:green */
+
+    }

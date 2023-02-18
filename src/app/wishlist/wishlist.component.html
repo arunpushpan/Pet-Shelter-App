@@ -1,0 +1,79 @@
+<!-- header -->
+<app-header></app-header>
+
+<div style="height:75px"></div>
+
+<!-- wishlist empty design -->
+<div *ngIf="wishlistStatus" class="container mt-5 mb-5 text-center border rounded p-5 bg-success bg-opacity-10" >
+    <div class="row ">
+<h3>Your Favourite Pet List is Empty!</h3>
+<i class="fa-sharp fa-4x fa-solid fa-heart-crack fa-beat text-danger"></i>
+
+</div>
+<a routerLink="/" class="btn btn-primary text-center mt-3"><i class="fa-solid fa-paw text-warning"></i>&nbsp;&nbsp;View Pets</a>
+
+</div>
+
+<!-- wishlist design -->
+<div *ngIf="!wishlistStatus" class="container mb-2 mt-5 mb-5">
+    <div class="row border">
+        <div class="container bg-secondary rounded "> 
+            <div class="row">
+           <div class="col-sm mt-2">  <h5 ><a routerLink="/pets" class="btn btn-outline-light"><i class="fas fa-long-arrow-alt-left text-warning"></i>&nbsp;&nbsp;View Pets</a>
+           </h5>
+           </div>
+           <div class="col-sm text-center mt-2">
+             <span class="text-dark  head " style="font-size: 20px;"><b> Dont Shop, Adopt! </b></span>
+       
+         
+           </div>
+           <div class="col-sm mt-2">
+            <!-- <h5 class=" float-end"><a routerLink="/pets" class="btn btn-outline-light">
+                Empty List&nbsp;&nbsp;<i class="fa-solid fa-trash text-warning"></i></a></h5> -->
+           </div>
+         </div>
+       </div>
+       
+        <div class="col-lg-12 border rounded p-3 zoom">
+           
+            <!-- wishlist table -->
+            <table class="table ">
+                <thead class="text-success">
+                    <tr>
+                        <th>No</th>
+                        <th>Pet Image</th>
+                        <th>Name/Breed</th>
+                        <th>Gender</th>
+                        <th>Adoption Fee</th>
+
+                       <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let pet of wishlist; let i=index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td><img  width="70px" [src]="pet.image" alt="pet image"></td>
+                        <td>{{pet.title}}</td>
+                        
+                        <td> {{pet.gender}}</td>
+                        <td>₹ {{pet.price}}</td>
+
+                        <td>
+                            <button (click)="removeItem(pet.id)" class="text-danger btn"><i class="fa-solid  fa-trash"></i>  </button>&nbsp;&nbsp;
+
+                        </td>
+                    </tr>
+                    <tr>
+                        
+                    
+                </tr>
+                </tbody>
+            </table>
+        <div class="float-end">  
+ <button  class="btn btn-outline-primary" routerLink="/cart"><i class="fa-solid fa-file-lines"></i>&nbsp; Apply To Adopt  </button>
+</div> 
+        </div>
+        
+    </div>
+</div>
+

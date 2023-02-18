@@ -1,0 +1,181 @@
+<!-- Navigation-->
+<div class="fixed-top">
+    <div class="text-center bg-success text-warning">Adopt a Pet- Find out Your Companion on Pet Shelter <hr style="padding: 0; margin: 0;"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid px-4 px-lg-5 ">
+           <!-- <span> <i class='fas fa-2x fa-paw text-warning' ></i> -->
+            <span><img style="border-radius: 50%;" width="45px" src="https://dm6g3jbka53hp.cloudfront.net/static-images/app-upadate-banner_TPN-app-logo.png" alt="pet shelter icon">
+            <a class="navbar-brand text-light" routerLink="" style="font-family: 'Righteous', cursive;">&nbsp;
+                PET SHELTER</a></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 ">
+                    <li class="nav-item">
+                        <!-- <form class="d-flex ">
+    
+                            <input type="text" class="form-control" placeholder="Search for Pets">
+                        </form> -->
+                        <div class="input-group">
+                            <!-- <input  type="text" class="form-control" placeholder="Find a Pet">
+                            <div class="input-group-append">
+                              <button class="btn btn-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                              </button>
+                            </div> -->
+                          </div>
+                    </li>
+                    <!-- <li  class="nav-item"><a  class="nav-link text-light" ><i class="fa-solid fa-heart text-danger"></i>&nbsp;&nbsp;Favourite Pets</a></li> -->
+                  
+                </ul>
+                <form  class="d-flex loginbtn">
+                    
+                    <span class="text-light align-items-center" style="text-decoration: none;" >
+
+                    </span>
+                </form>
+                <div >
+    
+                    <form  class="loginbtn">
+                        <a  class="btn btn-outline-light text-light ms-2" type="submit" routerLink="/admin/view-app">
+                            
+                            User Applications
+                        </a>
+                    <a  class="btn btn-outline-light text-light ms-2" type="submit" routerLink="/admin">
+                        <i class="fa-solid fa-right-from-bracket"></i>&nbsp;
+                        Log out
+                    </a>
+                </form>
+            </div>
+
+        </div>
+
+        </div>
+    </nav>
+    </div>
+
+    
+      
+
+
+<div style="height:90px"></div>
+
+
+<div class="container text-center">
+    <h2>Add New Pet</h2>
+
+<div class=" row " style="margin-left: 25%;">
+    <form (ngSubmit)="savepet()" [formGroup]="savepetForm">   
+        <div class="col-6">
+  
+    <div >
+        <input name="id" formControlName="id" type="text" class="form-control" placeholder="Id"  />
+    </div>
+
+    <div *ngIf="this.savepetForm.get('id')?.errors&&this.savepetForm.get('id')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Id
+                                </div>
+
+    <div class=" mt-2">
+        <input name="title" formControlName="title" type="text" class="form-control" placeholder="Breed"  />
+    </div>
+
+
+    <div *ngIf="this.savepetForm.get('title')?.errors&&this.savepetForm.get('title')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid title
+                                </div>
+
+    <div class=" mt-2">
+        <input name="gender" formControlName="gender" type="text" class="form-control" placeholder="Gender"  />
+    </div>
+    
+    <div *ngIf="this.savepetForm.get('gender')?.errors&&this.savepetForm.get('gender')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Gender
+                                </div>
+    <div class=" mt-2">
+        <input name="price" formControlName="price" type="text" class="form-control" placeholder="Adoption Fee"  />
+    </div>
+    
+    <div *ngIf="this.savepetForm.get('price')?.errors&&this.savepetForm.get('price')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Price
+                                </div>
+    <div class=" mt-2">
+        <input name="description" formControlName="description" type="text" class="form-control" placeholder="Description"  />
+    </div>
+    
+    <div *ngIf="this.savepetForm.get('description')?.errors&&this.savepetForm.get('description')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Description
+                                </div>
+    <div class=" mt-2">
+        <input name="size" formControlName="size" type="text" class="form-control" placeholder="Age"  />
+    </div>
+    <div *ngIf="this.savepetForm.get('size')?.errors&&this.savepetForm.get('size')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Size
+                                </div>
+    <div class=" mt-2">
+        <input name="height" formControlName="height" type="text" class="form-control" placeholder="Height"  />
+    </div>
+</div>
+<div class="col-6">
+    <div *ngIf="this.savepetForm.get('height')?.errors&&this.savepetForm.get('height')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Height
+                                </div>
+    <div class=" mt-2">
+        <input name="image" formControlName="image" type="text" class="form-control" placeholder="Image"  />
+    </div>
+    <div *ngIf="this.savepetForm.get('image')?.errors&&this.savepetForm.get('image')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Url
+                                </div>
+    <div class=" mt-2">
+        <input name="weight" formControlName="weight" type="text" class="form-control" placeholder="Weight" />
+    </div>
+    <div *ngIf="this.savepetForm.get('weight')?.errors&&this.savepetForm.get('weight')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Weight
+                                </div>
+    <div class=" mt-2">
+        <input name="coat" formControlName="coat" type="text" class="form-control" placeholder="Coat"  />
+    </div>
+    <div *ngIf="this.savepetForm.get('coat')?.errors&&this.savepetForm.get('coat')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Coat
+                                </div>
+    <div class=" mt-2">
+        <input name="energy" formControlName="energy" type="text" class="form-control" placeholder="Energy"  />
+    </div>
+    <div *ngIf="this.savepetForm.get('energy')?.errors&&this.savepetForm.get('energy')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Energy
+                                </div>
+    <div class=" mt-2">
+        <input name="activities" formControlName="activities" type="text" class="form-control" placeholder="Activities"  />
+    </div>
+    <div *ngIf="this.savepetForm.get('activities')?.errors&&this.savepetForm.get('activities')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Activities
+                                </div>
+    <div class=" mt-2">
+        <input name="category" formControlName="category" type="text" class="form-control" placeholder="Category"  />
+    </div>
+    <div *ngIf="this.savepetForm.get('category')?.errors&&this.savepetForm.get('category')?.touched" 
+                            class="text-danger mb-2">
+                               Invalid Category
+                                </div>
+    <div class="mt-2 mb-2">
+        <button type="button" class="btn btn-secondary" routerLink="/admin/home">back</button>
+        <button type="submit" class="btn btn-primary ms-3">Save Pet</button>
+      </div>   
+   
+    </div>
+
+</form>
+
+</div>
+</div>

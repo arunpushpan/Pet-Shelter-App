@@ -1,0 +1,81 @@
+<!-- Navigation-->
+<div class="fixed-top">
+    <div class="text-center bg-success text-warning">Adopt a Pet- Find out Your Companion on Pet Shelter <hr style="padding: 0; margin: 0;"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <div class="container-fluid px-4 px-lg-5 ">
+           <!-- <span> <i class='fas fa-2x fa-paw text-warning' ></i> -->
+            <span><img style="border-radius: 50%;" width="45px" src="https://dm6g3jbka53hp.cloudfront.net/static-images/app-upadate-banner_TPN-app-logo.png" alt="pet shelter icon">
+            <a class="navbar-brand text-light" routerLink="" style="font-family: 'Righteous', cursive;">&nbsp;
+                PET SHELTER</a></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 ">
+                    <li class="nav-item">
+                        <!-- <form class="d-flex ">
+    
+                            <input type="text" class="form-control" placeholder="Search for Pets">
+                        </form> -->
+                        <div class="input-group">
+                            <input (keyup)="searchByName($event)" type="text" class="form-control" placeholder="Find a Pet">
+                            <div class="input-group-append">
+                              <button class="btn btn-secondary" type="button">
+                                <i class="fa fa-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                    </li>
+                    <li *ngIf="!signInButton" class="nav-item"><a  class="nav-link text-light" routerLink="/wishlist"><i class="fa-solid fa-heart text-danger"></i>&nbsp;&nbsp;Favourite Pets</a></li>
+                  
+                </ul>
+                <form *ngIf="!signInButton" class="d-flex loginbtn">
+                    
+                    <span class="text-light align-items-center" style="text-decoration: none;" >
+                        <p>Signed in as {{user}}<p>
+
+                    </span>
+                </form>
+                <div *ngIf="signInButton">
+    
+                    <form  class="loginbtn">
+                    <a  class="btn btn-outline-light text-light ms-2" type="submit" routerLink="/login">
+                        <i class="fa-solid fa-user"></i>&nbsp;
+                        Sign In
+                    </a>
+                </form>
+            </div>
+
+<!-- display username -->
+<div *ngIf="!signInButton" class="ms-2">
+    
+    <!-- <div  class="loginbtn">
+    <span  class="border rounded p-2 text-warning ms-2" >
+        {{user}}'s account &nbsp;
+        <i class="fa-solid fa-caret-down"></i> 
+     </span>
+</div> -->
+
+<span class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle border rounded p-2 text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        My account 
+
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item"  style="cursor: pointer; text-decoration: none;" routerLink="/re-home"><i class="fa-solid fa-house-chimney"></i>&nbsp;Rehome My Pet</a></li>
+
+      <li><hr class="dropdown-divider"></li>
+
+      <li><a style="cursor: pointer; text-decoration: none;" class="dropdown-item text-danger" (click)="logout()" ><i class="fa-solid fa-right-from-bracket"></i>&nbsp; Log Out</a></li>
+    </ul>
+</span>
+
+
+</div>
+
+        </div>
+
+        </div>
+    </nav>
+    </div>
+
+    
+      

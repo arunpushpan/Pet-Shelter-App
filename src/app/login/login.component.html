@@ -1,0 +1,55 @@
+
+<!-- header -->
+<app-header></app-header>
+
+<div style="height:70px"></div>
+
+
+<div class="wrapper">
+   <div class="logo">
+      <img src="https://dm6g3jbka53hp.cloudfront.net/static-images/app-upadate-banner_TPN-app-logo.png" alt="">
+  </div> 
+  <div class="text-center mt-4 name text-success">
+     <h3>Pet Shelter</h3>
+     <hr>
+  </div>
+  <form (ngSubmit)="login()" [formGroup]="loginForm" class="p-3 mt-3">
+      <div class="form-field d-flex align-items-center">
+        <span><img style="border-radius: 50%;" width="30px" src="https://www.pngitem.com/pimgs/m/20-202269_phone-number-telephone-svg-png-icon-free-download.png" alt="user image"></span>
+        <input name="phno" formControlName="phno" type="text" class="form-control"  id="phoneNumber" placeholder="Phone Number">
+      </div>
+
+       <!-- invalid phno -->
+<div *ngIf="this.loginForm.get('phno')?.errors&&this.loginForm.get('phno')?.touched" 
+class="text-danger mb-2">
+   Invalid Phone Number
+</div>
+
+      <div class="form-field d-flex align-items-center ">
+        <span><img style="border-radius: 50%;" width="30px" src="https://png.pngtree.com/png-vector/20190511/ourmid/pngtree-vector-key-icon-png-image_1028662.jpg" alt="key image"></span>
+        <input name="pswd" formControlName="pswd" type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+
+                                <!-- invalid pswd -->
+                                <div *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched" 
+                                class="text-danger mb-2">
+                                   Invalid Password
+                                </div>
+                                <div class="text-danger">
+                                    {{errorMsg}}
+                                
+                                </div>
+                                        
+
+      <button type="submit" class="btn mt-3 btn-success">Sign in
+
+        <span *ngIf="successMsg" class="spinner-border text-light " role="status">
+          <span class="visually-hidden">Loading...</span>
+      </span>
+
+      </button>
+  </form>
+  <div class="text-center fs-6">
+      <span>Not a Member? Click Here to  <a routerLink="/register">Sign Up</a></span>
+  </div>
+</div>

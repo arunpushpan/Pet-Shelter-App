@@ -1,0 +1,61 @@
+<!-- header -->
+<app-header></app-header>
+
+<div style="height:80px"></div>
+
+<!-- view-pet design -->
+
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="images p-3 mt-3">
+                            <div class="text-center p-4"> <img id="main-image" [src]="pet.image" width="250px" /> </div>
+                            <div class=" text-center border "> 
+                                <h5 class="p-2 bg-secondary text-light">Adoption Fee: ₹ {{pet.price}}</h5>
+                            <!-- <img onclick="change_image(this)" src="https://i.imgur.com/Rx7uKd0.jpg" width="70"> <img onclick="change_image(this)" src="https://i.imgur.com/Dhebu4F.jpg" width="70"> -->
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center"> 
+                                    <a routerLink="/" class="btn text-primary"><i class="fa fa-long-arrow-left"></i> &nbsp;<span class="ml-1">Back</span></a> </div>
+                                     <i class="fa fa-shopping-cart text-muted"></i>
+                            </div>
+                            <hr>
+                            <div class="mt-4 mb-1"> <span class="text-uppercase text-muted brand">{{pet.category}}</span>
+                                
+                                <h5 class="text-uppercase"><b>{{pet.title}}</b></h5>
+                                <div class="price d-flex flex-col align-items-center"> <span class="act-price"><b>Gender </b>: {{pet.gender}}</span>
+                                    <!-- <div class="ml-2"> <small class="dis-price">$59</small> <span>40% OFF</span> </div> -->
+                                </div>
+                            </div>
+                            <p class="about">{{pet.description}}</p><hr>
+                            <div class="sizes mt-3" style="text-align: justify;">
+                                <h6 ><b>Age </b>      : {{pet.size}}</h6> 
+                                <h6 ><b>Height</b>     : {{pet.height}}</h6> 
+                                <h6 ><b>Weight </b>    : {{pet.weight}}</h6> 
+                                <h6 ><b>Coat   </b>    : {{pet.coat}}</h6> 
+                                <h6 ><b>Energy </b>    : {{pet.energy}}</h6> 
+                                <h6 ><b>Activities</b> : {{pet.activities}}</h6> 
+
+                            </div>
+                            <div class="cart mt-4 align-items-center"> 
+                                <!-- <button class="btn btn-danger" routerLink="/pets/cart"><i class="fa-solid fa-cart-plus fa-beat"></i>&nbsp;&nbsp;Add to cart</button>  -->
+                                <button (click)="addtowishlist(pet)" class="btn btn-primary ms-2" ><i class="fa-solid fa-heart fa-beat"></i>&nbsp;&nbsp;Favourite Pet</button>
+                            <div class="alert alert-warning mt-2">
+                                <h6>Go To <a routerLink="/wishlist">Favourite Pets </a>Page to Apply </h6>                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
