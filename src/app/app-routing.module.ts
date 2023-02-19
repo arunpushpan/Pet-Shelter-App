@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegisterComponent } from './register/register.component';
+import { RehomeStatusComponent } from './rehome-status/rehome-status.component';
 import { RehomeComponent } from './rehome/rehome.component';
 import { RejectAppComponent } from './reject-app/reject-app.component';
 import { ViewPetComponent } from './view-pet/view-pet.component';
@@ -41,6 +42,8 @@ const routes: Routes = [
   {path:'admin/accept-app', component:AcceptAppComponent},
   // reject-app
   {path:'admin/reject-app',component:RejectAppComponent},
+  // rehome-user-status
+  {path:'rehome-status/:id', component:RehomeStatusComponent},
 
   // page-not-found
   {path: '**', component: PageNotFoundComponent}

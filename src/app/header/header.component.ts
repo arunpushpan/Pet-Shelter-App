@@ -13,23 +13,29 @@ export class HeaderComponent implements OnInit {
 
 signInButton:boolean=false
 user:string=''
-
+phno:string=''
 
 
   ngOnInit(): void {
 
 // to check whether the account holder is already logged in
 if(!localStorage.getItem("token")){
-  // alert("Please Sign In")
-  // navigate to login page
-  // this.router.navigateByUrl('/')
+ 
 
   this.signInButton=true
   
 }
+
 if(localStorage.getItem("username")){
   this.user = localStorage.getItem("username") || ''
   }
+
+  if(localStorage.getItem("currentPhno")){
+    this.phno = localStorage.getItem("currentPhno") || ''
+    }
+// console.log(this.phno);
+
+
 
   }
 

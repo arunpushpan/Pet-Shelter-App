@@ -22,6 +22,7 @@ import { AddpetComponent } from './addpet/addpet.component';
 import { ViewuserappComponent } from './viewuserapp/viewuserapp.component';
 import { AcceptAppComponent } from './accept-app/accept-app.component';
 import { RejectAppComponent } from './reject-app/reject-app.component';
+import { RehomeStatusComponent } from './rehome-status/rehome-status.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RejectAppComponent } from './reject-app/reject-app.component';
     AddpetComponent,
     ViewuserappComponent,
     AcceptAppComponent,
-    RejectAppComponent
+    RejectAppComponent,
+    RehomeStatusComponent
   ],
   imports: [
     BrowserModule,

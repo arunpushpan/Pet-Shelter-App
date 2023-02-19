@@ -38,7 +38,7 @@ export class LoginComponent {
           // store username in local storage
           localStorage.setItem("username",result.username)
           // store current acno
-          localStorage.setItem("currentPhno",JSON.stringify(result.currentPhno))
+          localStorage.setItem("currentPhno",result.currentPhno)
            // store token
            localStorage.setItem("token",result.token)
         // alert(result.message)

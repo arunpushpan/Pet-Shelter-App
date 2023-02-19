@@ -25,7 +25,7 @@
                           </div>
                     </li>
                     <li *ngIf="!signInButton" class="nav-item"><a  class="nav-link text-light" routerLink="/wishlist"><i class="fa-solid fa-heart text-danger"></i>&nbsp;&nbsp;Favourite Pets</a></li>
-                  
+
                 </ul>
                 <form *ngIf="!signInButton" class="d-flex loginbtn">
                     
@@ -61,6 +61,7 @@
     </a>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item"  style="cursor: pointer; text-decoration: none;" routerLink="/re-home"><i class="fa-solid fa-house-chimney"></i>&nbsp;Rehome My Pet</a></li>
+      <li><a class="dropdown-item"  style="cursor: pointer; text-decoration: none;" routerLink="/rehome-status/{{phno}}"><i class="fa-solid fa-message"></i>&nbsp;Message</a></li>
 
       <li><hr class="dropdown-divider"></li>
 
@@ -77,5 +78,4 @@
     </nav>
     </div>
 
-    
-      
+   
